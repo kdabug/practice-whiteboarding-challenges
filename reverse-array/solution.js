@@ -16,8 +16,10 @@ function reverseArray(arr) {
 
 //method
 function reverseArrayMethod(arr) {
-  return arr.reverse;
+  return arr.reverse();
 }
-var a = [3, 5, 7, 8];
-var b = reverseArr(a);
+
 //PHASE THREE: TEST
+
+console.log(reverseArray([2, 3, 4, 5]));
+console.log(reverseArrayMethod([2, 3, 4, 5]));
