@@ -1,20 +1,35 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a program that finds the least common multipe.
+//Ex. the lcm of 10 and 15 is 30. the lcm of 6 and 8 is 24.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
+//Will the inputs always be numbers?
+//Will the numbers always be positive?
+//Will there only be two numbers given?
 
 //PHASE TWO: CODE
 
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
-
-  return fibonacci(num - 1) + fibonacci(num - 2);
+//method uses GCD
+function leastCommonMultiple(x, y) {
+  if (typeof x !== "number" || typeof y !== "number") return false;
+  return !x || !y ? 0 : Math.abs((x * y) / greatestCommonDivisor(x, y));
 }
 
+function greatestCommonDivisor(x, y) {
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while (y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+
+//interested in how to find the lcm of more than two numbers? look at the link below
+//https://www.w3resource.com/javascript-exercises/javascript-math-exercise-11.php
+
 //PHASE THREE: TEST
-console.log(fibonacci(14));
+
+console.log(leastCommonMultiple(3, 15));
+console.log(leastCommonMultiple(10, 15));

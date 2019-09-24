@@ -1,20 +1,29 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a program that identifies the first unique character in a string.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
+//Is this a string?
+//Do I only include characters in the alphabet? Could a space be a character?
 
 //PHASE TWO: CODE
 
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
+function findFirstUniqueCharacter(inputString) {
+  let freqCounter = [];
+  inputString.split("").forEach(ch => {
+    if (!freqCounter[ch]) freqCounter[ch] = 1;
+    else freqCounter[ch]++;
+  });
 
-  return fibonacci(num - 1) + fibonacci(num - 2);
+  //console.log(freqCounter);
+
+  for (let i = 0; i < inputString.length - 1; i++) {
+    let ch = inputString[i];
+    if (freqCounter[ch] == 1) return ch;
+  }
+  return "No Unique Character Found";
 }
 
 //PHASE THREE: TEST
-console.log(fibonacci(14));
+console.log(findFirstUniqueCharacter("foobar")); // f
+console.log(findFirstUniqueCharacter("aabbccdef")); // d
+console.log(findFirstUniqueCharacter("aabbcc")); // 'No Unique Character Found'

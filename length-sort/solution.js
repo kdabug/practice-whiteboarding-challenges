@@ -1,20 +1,17 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a function that sorts by length.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
+//Do I sort the length descending or ascending?
+//Is the input many strings or an array of strings.
 
 //PHASE TWO: CODE
-
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
-
-  return fibonacci(num - 1) + fibonacci(num - 2);
+function lengthSort(arr) {
+  arr.sort(function(a, b) {
+    // ASC  -> a.length - b.length
+    // DESC -> b.length - a.length
+    return b.length - a.length;
+  });
 }
 
 //PHASE THREE: TEST
-console.log(fibonacci(14));

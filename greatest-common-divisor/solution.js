@@ -1,20 +1,25 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a program that finds the greatest common divisor.
+//Ex. the gcd of 2 and 16 is 2. the gcd of 24 and 16 is 8.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
+//Will the inputs always be numbers?
+//Will the numbers always be positive?
+//Will there only be two numbers given?
 
 //PHASE TWO: CODE
-
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
-
-  return fibonacci(num - 1) + fibonacci(num - 2);
+function greatestCommonDivisor(x, y) {
+  if (typeof x !== "number" || typeof y !== "number") return false;
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while (y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
 }
 
 //PHASE THREE: TEST
-console.log(fibonacci(14));
+console.log(gcd_two_numbers(12, 13));
+console.log(gcd_two_numbers(9, 3));

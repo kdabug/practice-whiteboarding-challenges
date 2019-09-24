@@ -1,20 +1,46 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a program that creates a random number generator
+//which only returns a unique number in a given range from 1 to n.
+//for example, if the range is from 1 to 100, the number 2 cannot be returned twice.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
 
 //PHASE TWO: CODE
 
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
+class RandomNumberGenerator {
+  constructor(n) {
+    this.alreadyPicked = [];
+    this.range = n;
+    this.pickedNum = null;
+  }
+  generateNumber() {
+    this.pickedNum = Math.floor(Math.random() * this.range + 1);
 
-  return fibonacci(num - 1) + fibonacci(num - 2);
+    if (!this.alreadyPicked.includes(this.pickedNum)) {
+      this.alreadyPicked.push(this.pickedNum);
+      console.log(`You've picked ${this.pickedNum}`);
+    } else {
+      if (this.alreadyPicked.length === this.range) {
+        console.log("you've picked all the numbers, reset the generator");
+      } else this.generateNumber();
+    }
+  }
+  reset(n = this.range) {
+    this.alreadyPicked = [];
+    this.pickedNum = null;
+    this.range = n;
+    console.log(
+      `you are reseting your instance of RNG with range 1 to ${this.range}`
+    );
+  }
 }
 
 //PHASE THREE: TEST
-console.log(fibonacci(14));
+rng = new RandomNumberGenerator(4);
+rng.generateNumber();
+rng.generateNumber();
+rng.generateNumber();
+rng.generateNumber();
+rng.generateNumber();
+
+rng.reset();
