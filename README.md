@@ -12,7 +12,7 @@ Work in phases. Timebox how long each phase should take:
 
 ## TIPS
 
-I hear interviewers often say that the biggest mistake an interviewee can make during a whiteboarding challenge is jumping straight to writing code. Use at least a few minutes to reiterate the problem, ask any clarifying questions, and explain your typical _process_ for solving a problem. Key points to mention in the 'no code' phase:
+The [biggest mistake](https://blog.pramp.com/top-8-mistakes-in-technical-interviews-according-to-data-27d2572bda1f) an interviewee can make during a whiteboarding challenge is jumping straight to writing code. Use at least a few minutes to reiterate the problem, ask any clarifying questions, and explain your typical _process_ for solving a problem. Key points to mention in the 'no code' phase:
 
 1. your assumed inputs (after clarifying with interviewer)
 2. the output you expect to have at the end.
