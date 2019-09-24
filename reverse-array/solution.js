@@ -1,20 +1,23 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
+//Write a function that reverses the order of an array.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
+//Can I use Javascript's built in Array prototype reverse method?
 
 //PHASE TWO: CODE
-
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
-
-  return fibonacci(num - 1) + fibonacci(num - 2);
+//non method
+function reverseArray(arr) {
+  let resp = new Array();
+  for (var i = arr.length - 1; i >= 0; i--) {
+    resp.push(arr[i]);
+  }
+  return resp;
 }
 
+//method
+function reverseArrayMethod(arr) {
+  return arr.reverse;
+}
+var a = [3, 5, 7, 8];
+var b = reverseArr(a);
 //PHASE THREE: TEST
-console.log(fibonacci(14));

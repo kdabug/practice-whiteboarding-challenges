@@ -6,11 +6,9 @@ def remove_repeats(string)
     count = 0
      while count < str.length do
       if hash[str[count]] == nil
-
         hash[str[count]] = 1
         count = count + 1
       else
- 
         str.delete_at(count);
       end
     end
