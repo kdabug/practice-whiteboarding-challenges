@@ -46,12 +46,16 @@ function reverseRecursion(str) {
   //   if (str === "") {
   //     return str;
   //   } else {
-  //     return reverse(str.substr(1)) + str[0];
+  //     return reverseRecursion(str.substr(1)) + str[0];
   //   }
-  return str ? reverse(str.substr(1)) + str[0] : str;
+  return str ? reverseRecursion(str.substr(1)) + str[0] : str;
 }
 
 //PHASE THREE: TEST
-
-console.log(reverseArray([2, 3, 4, 5]));
-console.log(reverseArrayMethod([2, 3, 4, 5]));
+let a = "this is my test string";
+console.log(reverseString(a));
+console.log(reverseMethod(a));
+console.log(reverseES(a));
+console.log(reverseReduce(a));
+console.log(reverseSpread(a));
+console.log(reverseRecursion(a));
