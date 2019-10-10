@@ -1,20 +1,17 @@
 //PROBLEM
-//Write a function to return an n element in Fibonacci sequence.
 
 //PHASE ONE: QUESTIONS & PSEUDOCODE
-//The Fibonacci sequence is a series of numbers where any number
-//in the series is the sum of the preceding two numbers.
-//If you need help on determining what the Fibonnaci sequence is
-//wikipedia will help: https://en.wikipedia.org/wiki/Fibonacci_number
 
 //PHASE TWO: CODE
 
-//recursive
-function fibonacci(num) {
-  if (num <= 2) return 1;
-
-  return fibonacci(num - 1) + fibonacci(num - 2);
+function fizzBuzz(n) {
+  for (let i = 1; i < n + 1; i++) {
+    if (i % 15 == 0) console.log("FizzBuzz");
+    else if (i % 3 == 0) console.log("Fizz");
+    else if (i % 5 == 0) console.log("Buzz");
+    else console.log(i);
+  }
 }
 
 //PHASE THREE: TEST
-console.log(fibonacci(14));
+console.log(fizzBuzz(30));
