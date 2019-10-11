@@ -7,7 +7,7 @@
 //PHASE TWO: CODE
 class TicTacToeGame {
   constructor() {
-    this.currentBoard = [[[], [], []], [[], [], []], [[], [], []]];
+    this.currentBoard = [["_", "_", "_"], ["_", "_", "_"], ["_", "_", "_"]];
     this.numPlayers = null;
     this.currentPlayer = null;
     this.nextPlayer = null;
@@ -31,11 +31,11 @@ class TicTacToeGame {
 
   move(arr) {
     if (this.currentPlayer) {
-      if (!this.currentBoard[arr[0]][arr[1]]) {
+      if (this.currentBoard[arr[0]][arr[1]] === "_") {
         this.currentPlayer === 1
           ? (this.currentBoard[arr[0]][arr[1]] = "X")
           : (this.currentBoard[arr[0]][arr[1]] = "0");
-        this.checkWin();
+        this.checkWin(arr);
         this.switchPlayers();
       } else {
         console.log("This space already has a piece, choose another space");
@@ -49,7 +49,7 @@ class TicTacToeGame {
     while (placing) {
       let a = Math.floor(Math.random() * 3);
       let b = Math.floor(Math.random() * 3);
-      if (!this.currentBoard[a][b]) {
+      if (this.currentBoard[a][b] === "_") {
         this.move([a, b]);
         placing = false;
       }
@@ -83,7 +83,7 @@ class TicTacToeGame {
     //check vertical
     let verticalScore = 0;
     for (let i = 0; i < 3; i++) {
-      if (this.currentboard[i][arr[1]] === this.currentBoard[arr[0]][arr[1]]) {
+      if (this.currentBoard[i][arr[1]] === this.currentBoard[arr[0]][arr[1]]) {
         verticalScore++;
       }
     }
@@ -94,7 +94,7 @@ class TicTacToeGame {
     //check horizontal
     let horizontalScore = 0;
     for (let i = 0; i < 3; i++) {
-      if (this.currentboard[arr[0]][i] === this.currentBoard[arr[0]][arr[1]]) {
+      if (this.currentBoard[arr[0]][i] === this.currentBoard[arr[0]][arr[1]]) {
         horizontalScore++;
       }
     }
@@ -130,5 +130,5 @@ console.log(newGame);
 newGame.startGame(1);
 console.log(newGame);
 newGame.move([1, 1]);
-console.log(newGame);
+console.log(newGame.currentBoard[1]);
 newGame.showBoard();
