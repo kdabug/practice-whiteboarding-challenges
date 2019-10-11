@@ -44,11 +44,15 @@ class TicTacToeGame {
   }
 
   //COMPUTER MAKES A MOVE
-  computerMove(){
+  computerMove() {
     let placing = true;
-    while (placing){
-        let a = 
-        let b = 
+    while (placing) {
+      let a = Math.floor(Math.random() * 3);
+      let b = Math.floor(Math.random() * 3);
+      if (!this.currentBoard[a][b]) {
+        this.move([a, b]);
+        placing = false;
+      }
     }
   }
 
@@ -58,9 +62,9 @@ class TicTacToeGame {
     this.currentPlayer = this.nextPlayer;
     this.nextPlayer = temp;
 
-    if(this.currentPlayer === 'computer'){
-        console.log('The computer is making a move.')
-        this.computerMove();
+    if (this.currentPlayer === "computer") {
+      console.log("The computer is making a move.");
+      this.computerMove();
     }
   }
 
@@ -128,4 +132,3 @@ console.log(newGame);
 newGame.move([1, 1]);
 console.log(newGame);
 newGame.showBoard();
-
