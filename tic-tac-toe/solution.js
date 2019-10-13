@@ -34,7 +34,7 @@ class TicTacToeGame {
       if (this.currentBoard[arr[0]][arr[1]] === "_") {
         this.currentPlayer === 1
           ? (this.currentBoard[arr[0]][arr[1]] = "X")
-          : (this.currentBoard[arr[0]][arr[1]] = "0");
+          : (this.currentBoard[arr[0]][arr[1]] = "O");
         this.checkWin(arr);
         this.switchPlayers();
       } else {
@@ -73,9 +73,11 @@ class TicTacToeGame {
     //check diagonals
     if (
       (this.currentBoard[0][0] == this.currentBoard[1][1] &&
-        this.currentBoard[0][0] == this.currentBoard[2][2]) ||
+        this.currentBoard[0][0] == this.currentBoard[2][2] &&
+        this.currentBoard[0][0] != "_") ||
       (this.currentBoard[0][2] == this.currentBoard[1][1] &&
-        this.currentBoard[0][0] == this.currentBoard[2][0])
+        this.currentBoard[0][2] == this.currentBoard[2][0] &&
+        this.currentBoard[0][2] != "_")
     ) {
       console.log(`Player ${this.currentPlayer} has won the game`);
     }
@@ -120,7 +122,7 @@ class TicTacToeGame {
   //RESET THE BOARD
   reset() {
     console.log("You are resetting the current gameboard.");
-    this.currentBoard = [[[], [], []], [[], [], []], [[], [], []]];
+    this.currentBoard = [["_", "_", "_"], ["_", "_", "_"], ["_", "_", "_"]];
   }
 }
 
