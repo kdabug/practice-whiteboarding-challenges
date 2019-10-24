@@ -1,12 +1,12 @@
 body {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-gap: 1rem;
   grid-auto-flow: dense;
 }
 
 h1 {
-  grid-column: span 6;
+  grid-column: span 10;
   background-color: green;
   text-align: center;
   color: white;
@@ -14,9 +14,9 @@ h1 {
 }
 
 .box-grid {
-  grid-column: 2 / span 4;
+  grid-column: 2 / span 8;
   display: grid;
-  grid-template-columns: repeat(4, 30px);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   grid-gap: 0.5rem;
 }
 
