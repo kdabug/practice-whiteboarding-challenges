@@ -31,9 +31,19 @@ function fibonacciIterate(n) {
 //O(n)
 function fibonacciArray(number) {
   let sequence = [1, 1];
-
   for (let i = 2; i < number; i++) {
     sequence[i] = sequence[i - 1] + sequence[i - 2];
+  }
+  return sequence[number - 1];
+}
+
+function fibonacciWhile(number) {
+  let sequence = [1, 1];
+
+  while (sequence.length < n) {
+    const nextNumber =
+      sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    sequence.push(nextNumber);
   }
 
   return sequence[number - 1];
