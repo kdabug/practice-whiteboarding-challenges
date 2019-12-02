@@ -1,5 +1,7 @@
 # Whiteboarding 101
 
+Consistently updated for personal referece and practice
+
 ## PROCESS:
 
 Find enough space to write ideas, pseudocode, and code. Work in pairs if allowed. Never go silent: talk out your thoughts, ask questions, rubber duck, explain your results. When lacking clarity - ask your interviewer.
