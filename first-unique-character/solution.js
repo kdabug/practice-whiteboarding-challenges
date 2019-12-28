@@ -14,8 +14,6 @@ function findFirstUniqueCharacter(inputString) {
     else freqCounter[ch]++;
   });
 
-  //console.log(freqCounter);
-
   for (let i = 0; i < inputString.length - 1; i++) {
     let ch = inputString[i];
     if (freqCounter[ch] == 1) return ch;
